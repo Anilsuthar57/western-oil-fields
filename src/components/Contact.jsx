@@ -1,8 +1,4 @@
-import React from "react";
-import { useState } from "react";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import { Element } from "react-scroll";
-
+import React, { useState } from "react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -32,7 +28,6 @@ export default function Contact() {
   };
 
   return (
-    <Element name="contact">
     <section id="contact" className="py-16 lg:py-24 bg-gray-50">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
@@ -46,11 +41,14 @@ export default function Contact() {
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 italic"><span className="text-red-600">WESTERN </span><span className="text-blue-600">Oil Field Services</span></h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 italic">
+                <span className="text-red-600">WESTERN </span>
+                <span className="text-blue-600">Oil Field Services</span>
+              </h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mt-1">
-                    <FaMapMarkerAlt className="text-blue-600" />
+                    <span className="text-blue-600 text-xl">📍</span>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Address</h4>
@@ -64,13 +62,8 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  
-                
-                </div>
-
-                <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mt-1">
-                    <FaEnvelope className="text-green-600" />
+                    <span className="text-green-600 text-xl">✉️</span>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
@@ -191,6 +184,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-    </Element>
   );
 }
