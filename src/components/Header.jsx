@@ -1,8 +1,7 @@
 // src/components/Header.jsx
 import React, { useState } from "react";
-import { Menu, X, Factory } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.png";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,17 +14,10 @@ export default function Header() {
       { name: "Services", path: "/services" },
       { name: "QHSE", path: "/qhse" },
       { name: "Projects", path: "/projects" },
-
     ];
 
     return (
-      <div
-        className={
-          mobile
-            ? "flex flex-col space-y-4"
-            : "hidden lg:flex items-center space-x-6"
-        }
-      >
+      <div className={mobile ? "flex flex-col space-y-4" : "hidden lg:flex items-center space-x-6"}>
         {links.map((link) => (
           <Link
             key={link.name}
@@ -36,7 +28,6 @@ export default function Header() {
             {link.name}
           </Link>
         ))}
-
         <Link
           to="/contact"
           onClick={handleClose}
@@ -66,24 +57,24 @@ export default function Header() {
           {/* Desktop Links */}
           <NavLinks />
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button (SVG Icons used instead) */}
           <div className="lg:hidden">
             <button onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? (
-                <X className="w-6 h-6" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
               ) : (
-                <Menu className="w-6 h-6" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
               )}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
-        <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 ease-linear ${
-            isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
+        <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-linear ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
           <div className="pb-4 pt-2">
             <NavLinks mobile />
           </div>

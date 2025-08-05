@@ -1,11 +1,8 @@
-import { useEffect, useState } from "react";
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Element } from "react-scroll";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef } from "react";
-import { GiDuration } from "react-icons/gi";
-
+// import { ChevronLeft, ChevronRight } from "lucide-react"; // Unused
+// import { GiDuration } from "react-icons/gi"; // Unused
 
 const bgImages = [
   "https://images.pexels.com/photos/3105242/pexels-photo-3105242.jpeg",
@@ -32,7 +29,6 @@ const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const scrollRef = useRef(null);
-
 
   useEffect(() => {
     const firstImg = new Image();
@@ -96,32 +92,26 @@ const Hero = () => {
       </section>
 
       {/* Client Logos Section */}
-     {/* Client Logos Section with Arrows */}
-<section className="bg-gray-100 py-12 px-4 relative">
-  <h3 className="text-2xl sm:text-3xl text-center font-bold text-blue-700 mb-8 py-10">
-    Our ESTEEMED Clients
-  </h3>
+      <section className="bg-gray-100 py-12 px-4 relative">
+        <h3 className="text-2xl sm:text-3xl text-center font-bold text-blue-700 mb-8 py-10">
+          Our ESTEEMED Clients
+        </h3>
 
-  {/* Arrows */}
- 
-
-  {/* Logo Row */}
-  <div
-    ref={scrollRef}
-    className="flex overflow-x-auto scrollbar-hide gap-8 px-10 scroll-smooth"
-  >
-    {clientLogos.map((client, index) => (
-      <img
-        key={index}
-        src={client.logo}
-        alt={client.name}
-        title={client.name}
-        className="h-20 object-contain flex-shrink-0 transition-transform hover:scale-110 duration-300 hover:grayscale-0"
-      />
-    ))}
-  </div>
-</section>
-
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-auto scrollbar-hide gap-8 px-10 scroll-smooth"
+        >
+          {clientLogos.map((client, index) => (
+            <img
+              key={index}
+              src={client.logo}
+              alt={client.name}
+              title={client.name}
+              className="h-20 object-contain flex-shrink-0 transition-transform hover:scale-110 duration-300 hover:grayscale-0"
+            />
+          ))}
+        </div>
+      </section>
     </>
   );
 };
