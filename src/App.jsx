@@ -54,7 +54,7 @@ function App() {
           <Route path="/services/wireline" element={<Wireline />} />
 
           <Route path="projects" element={<Projects />} />
-          <Route path="contact" element={<Contact />} />
+          {/* <Route path="contact" element={<Contact />} /> */}
         </Route>
       </Routes>
     </Router>
